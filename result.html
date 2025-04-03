@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Bio Results</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="results-page">
+    <div class="results-container">
+        <h2>Your Generated Bios:</h2>
+        <div id="bioResults"></div>
+        <button onclick="goBack()">Go Back</button>
+    </div>
+
+    <script>
+        function displayBios() {
+            const bios = JSON.parse(localStorage.getItem("generatedBios")) || [];
+            const bioContainer = document.getElementById("bioResults");
+
+            if (bios.length === 0) {
+                bioContainer.innerHTML = "<p>No bios found. Please generate a bio first.</p>";
+                return;
+            }
+
+            bioContainer.innerHTML = bios.map((bio, index) => `
+                <div class="bio-box">
+                    <p>${index + 1}️⃣ ${bio}</p>
+                </div>
+            `).join("");
+        }
+
+        function goBack() {
+            window.location.href = "index.html";
+        }
+
+        window.onload = displayBios;
+    </script>
+</body>
+</html>

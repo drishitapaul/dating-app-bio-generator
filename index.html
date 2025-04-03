@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dating App Bio Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Dating App Bio Generator</h2>
+    <form id="bioForm">
+        <div class="question-box">
+            <label for="app">Which dating app are you making this for?</label>
+            <select id="app" name="app">
+                <option value="tinder">Tinder</option>
+                <option value="bumble">Bumble</option>
+                <option value="hinge">Hinge</option>
+                <option value="okcupid">OkCupid</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="question-box">
+            <label for="age">What is your age?</label>
+            <input type="number" id="age" name="age" min="18" max="99" placeholder="E.g., 25">
+        </div>
+
+        <div class="question-box">
+            <p>What is your gender?</p>
+            <div class="inline-options">
+                <div>
+                    <input type="radio" id="male" name="gender" value="Male">
+                    <label for="male">Male</label>
+                </div>
+                <div>
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female">Female</label>
+                </div>
+                <div>
+                    <input type="radio" id="other" name="gender" value="Other">
+                    <label for="other">Other</label>
+                </div>
+            </div>
+        </div>        
+
+        <div class="question-box">
+            <p>Which gender are you interested in?</p>
+            <div class="inline-options">
+                <div>
+                    <input type="radio" id="men" name="gender_interest" value="Men">
+                    <label for="men">Men</label>
+                </div>
+                <div>
+                    <input type="radio" id="women" name="gender_interest" value="Women">
+                    <label for="women">Women</label>
+                </div>
+                <div>
+                    <input type="radio" id="both" name="gender_interest" value="Both">
+                    <label for="both">Both</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <label for="tone">What tone should the bio have?</label>
+            <select id="tone" name="tone">
+                <option value="flirty">Flirty</option>
+                <option value="funny">Funny</option>
+                <option value="fiesty">Fiesty</option>
+                <option value="romantic">Romantic</option>
+                <option value="chill">Chill</option>
+            </select>
+        </div>
+
+        <div class="question-box">
+            <p>What activities do you enjoy in your free time?</p>
+            <div class="inline-options">
+                <div>
+                    <input type="checkbox" id="reading" name="activities" value="Reading">
+                    <label for="reading">Reading</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="sports" name="activities" value="Sports">
+                    <label for="sports">Sports</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="gaming" name="activities" value="Gaming">
+                    <label for="gaming">Gaming</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="travel" name="activities" value="Travel">
+                    <label for="travel">Travel</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <label for="favorite-movie">What’s your favorite movie?</label>
+            <input type="text" id="favorite-movie" name="favorite-movie" placeholder="E.g., Inception, The Matrix" autocomplete="off">
+        </div>
+
+        <div class="question-box">
+            <label for="partner-traits">What characteristics are you looking for in a partner?</label>
+            <textarea id="partner-traits" name="partner-traits" placeholder="Kind, funny, ambitious"autocomplete="off"></textarea>
+        </div>
+
+        <div class="question-box">
+            <label for="skill">What unusual skill do you have?</label>
+            <input type="text" id="skill" name="skill" placeholder="E.g., Juggling, whistling with fingers"autocomplete="off" >
+        </div>
+
+        <div class="question-box">
+            <label for="bucket-list">What’s one thing on your bucket list?</label>
+            <input type="text" id="bucket-list" name="bucket-list" placeholder="E.g., Skydiving, visiting Japan"autocomplete="off">
+        </div>
+
+        <div class="question-box">
+            <label for="talking-about">What do you enjoy talking about?</label>
+            <textarea id="talking-about" name="talking-about" placeholder="E.g., Science, philosophy, pop culture" autocomplete="off"></textarea>
+        </div>        
+
+        <div class="button-container">
+            <button type="button" onclick="generateBio()">Generate Bio</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+    <!-- Results section (initially hidden) -->
+    <div id="results-section">
+    <div class="results-container">
+      <h2>Your Generated Bios</h2>
+      <div id="bioResults">
+        <!-- Generated bios will be displayed here -->
+      </div>
+      <button onclick="goBack()">Go Back</button>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
